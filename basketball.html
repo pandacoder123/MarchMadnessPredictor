@@ -1,97 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>March Madness Prediction</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>March Madness Prediction</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+</head>
 
-  <body>
+<body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">March Madness</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About the Author</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"></a> 
-            </li>
-          </ul>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">March Madness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About the Author</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a> 
+          </li>
+        </ul>
       </div>
-    </nav>
-
-    <div class="container mt-5">
-      
-      <!-- Page content -->
-
-      <h1 class="text-center">March Madness Prediction</h1>
-      <p class="text-center">Enter team stats to predict who will win!</p>
-
-      <div class="row justify-content-center">
-        <div class="col-md-6" style="background-color: rgb(240, 240, 240);margin-bottom: 10px; padding: 20px; border-radius: 10px;">
-          <form>
-            <div class="mb-3">
-              <label class="form-label">Team One Seed</label>  
-              <input type="number" class="form-control" id="seed1" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Team One Wins</label>
-              <input type="number" class="form-control" id="wins1" /> 
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Team One Losses</label>
-              <input type="number" class="form-control" id="losses1" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Team Two Seed</label>
-              <input type="number" class="form-control" id="seed2" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Team Two Wins</label>
-              <input type="number" class="form-control" id="wins2" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Team Two Losses</label>
-              <input type="number" class="form-control" id="losses2" />
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-      </div>
-
-      <div id="prediction" class="mt-5"></div>
-
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="bg-light py-3 mt-5">
-      <div class="container">
-        <p class="text-center">Copyright &copy; 2024</p>
+  <div class="container mt-5">
+    
+    <!-- Page content -->
+
+    <h1 class="text-center">March Madness Prediction</h1>
+    <p class="text-center">Enter team stats to predict who will win!</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6" style="background-color: rgb(240, 240, 240);margin-bottom: 10px; padding: 20px; border-radius: 10px;">
+        <form id="predictionForm"> <!-- Changed id to predictionForm -->
+          <div class="mb-3">
+            <label class="form-label">Team One Seed</label>  
+            <input type="number" class="form-control" id="seed1" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Team One Wins</label>
+            <input type="number" class="form-control" id="wins1" /> 
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Team One Losses</label>
+            <input type="number" class="form-control" id="losses1" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Team Two Seed</label>
+            <input type="number" class="form-control" id="seed2" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Team Two Wins</label>
+            <input type="number" class="form-control" id="wins2" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Team Two Losses</label>
+            <input type="number" class="form-control" id="losses2" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <br>
+          
+        </form>
       </div>
-    </footer>
+    </div>
+    <br>
+    <h1 style="text-align: center;" id="result">Result: </h1>
 
-    <script>
-      // Add dynamic background
-      document.body.style.backgroundImage = "url('https://source.unsplash.com/random/1920x1080')"; 
+    <div id="prediction" class="mt-5"></div>
 
-      function makePrediction(seed1, wins1, losses1, seed2, wins2, losses2) {
-        // Calculate winning percentage for each team
-        let winPct1 = wins1 / (wins1 + losses1);
-        let winPct2 = wins2 / (wins2
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-light py-3 mt-5">
+    <div class="container">
+      <p class="text-center">Copyright &copy; 2024</p>
+    </div>
+  </footer>
+
+  <script>
+    function makePrediction(
+      seed1, wins1, losses1,
+      seed2, wins2, losses2
+    ) {
+      // Calculate winning percentage for each team
+      let winPct1 = wins1 / (wins1 + losses1);
+      let winPct2 = wins2 / (wins2 + losses2);
+
+      if (seed1 < seed2) {
+        return "Team one wins";
+      } else if (seed2 < seed1) {
+        return "Team two wins";
+      } else if (seed1 === seed2) {
+        if (winPct1 > winPct2) {
+          return "Team one wins";
+        } else if (winPct2 > winPct1) {
+          return "Team two wins";
+        } else {
+          return "It's a tie!";
+        }
+      }
+    }
+
+    const form = document.getElementById('predictionForm'); // Changed to get form by ID
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const seed1 = parseInt(document.getElementById('seed1').value); 
+      const seed2 = parseInt(document.getElementById('seed2').value); 
+      const losses1 = parseInt(document.getElementById('losses1').value); 
+      const losses2 = parseInt(document.getElementById('losses2').value); 
+      const wins2 = parseInt(document.getElementById('wins2').value); 
+      const wins1 = parseInt(document.getElementById('wins1').value);
+      
+      document.getElementById('result').textContent = makePrediction(seed1, wins1, losses1, seed2, wins2, losses2); // Changed to set textContent
+      
+    });
+  </script>
+</body>
+</html>
